@@ -1,5 +1,11 @@
 # fastapi-sample
 
+FastAPI と uvicorn をインストール
+```bash
+$ pip install fastapi
+$ pip install "uvicorn[standard]"
+```
+
 起動の仕方
 ```
 $ python main.py
