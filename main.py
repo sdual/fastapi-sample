@@ -8,7 +8,7 @@ import api_sample.routers.sample
 
 def run_api():
     app = FastAPI()
-    app.include_router(api_sample.routers.sample.router)
+    app.include_router(api_sample.routers.sample_router)
     return app
 
 

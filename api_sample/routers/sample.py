@@ -4,14 +4,14 @@ from fastapi import APIRouter
 
 # https://fastapi.tiangolo.com/tutorial/bigger-applications/
 
-router = APIRouter()
+sample_router = APIRouter()
 
 
-@router.get('/hello')
+@sample_router.get('/hello')
 async def hello() -> str:
     return 'hello'
 
 
-@router.post("/update")
+@sample_router.post("/update")
 async def update() -> Dict[str, str]:
     return {"message": "updated."}

@@ -1,6 +1,5 @@
-from api_sample.routers.sample import hello, update
+from api_sample.routers.sample import sample_router
 
 __all__ = [
-    'hello',
-    'update',
+    'sample_router',
 ]
