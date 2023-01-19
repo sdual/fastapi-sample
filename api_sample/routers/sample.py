@@ -1,3 +1,5 @@
+from typing import Dict
+
 from fastapi import APIRouter
 
 # https://fastapi.tiangolo.com/tutorial/bigger-applications/
@@ -11,5 +13,5 @@ async def hello() -> str:
 
 
 @router.post("/update")
-async def update():
+async def update() -> Dict[str, str]:
     return {"message": "updated."}
