@@ -7,11 +7,12 @@ from fastapi import APIRouter
 router = APIRouter()
 
 
-@router.get('/hello')
-async def hello() -> str:
-    return 'hello'
+class SampleRouter:
 
+    @router.get('/hello')
+    async def hello(self) -> str:
+        return 'hello'
 
-@router.post("/update")
-async def update() -> Dict[str, str]:
-    return {"message": "updated."}
+    @router.post("/update")
+    async def update(self) -> Dict[str, str]:
+        return {"message": "updated."}
