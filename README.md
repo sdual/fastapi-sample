@@ -3,6 +3,7 @@
 FastAPI と uvicorn をインストール
 ```bash
 $ pip install fastapi
+$ pip install fastapi-utils
 $ pip install "uvicorn[standard]"
 ```
 
