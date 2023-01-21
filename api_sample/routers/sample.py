@@ -4,6 +4,7 @@ from fastapi import APIRouter
 from fastapi_utils.cbv import cbv
 
 # https://fastapi.tiangolo.com/tutorial/bigger-applications/
+# https://fastapi-utils.davidmontague.xyz/user-guide/class-based-views/#the-cbv-decorator
 
 router = APIRouter()
 
