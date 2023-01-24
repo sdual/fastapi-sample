@@ -2,8 +2,7 @@ from fastapi.testclient import TestClient
 from pytest_httpserver import HTTPServer
 import pytest
 
-from api_sample.services.server import APIServer
-import requests
+from api_sample.server import APIServer
 
 
 # https://pytest-httpserver.readthedocs.io/en/latest/

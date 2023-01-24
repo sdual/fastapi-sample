@@ -3,7 +3,7 @@ import traceback
 import uvicorn
 from fastapi import FastAPI
 
-from api_sample.services.server import APIServer
+from api_sample.server import APIServer
 
 
 def run_api() -> FastAPI:
