@@ -3,7 +3,7 @@ import urllib.parse
 import requests
 
 
-# 具体的な API として使用。
+# 実装例のために叩く API として使用。
 # https://jsonplaceholder.typicode.com/
 
 # client library: requests
@@ -12,10 +12,13 @@ import requests
 class SampleRequester:
     _SAMPLE_API_BASE_URL = 'https://jsonplaceholder.typicode.com/todos/'
 
-    def __init__(self):
-        pass
-
-    def request(self, id: int) -> str:
-        url = urllib.parse.urljoin(self._SAMPLE_API_BASE_URL, str(id))
+    def request(self, user_id: int) -> str:
+        url = urllib.parse.urljoin(self._SAMPLE_API_BASE_URL, str(user_id))
         res = requests.get(url)
-        return res.text
+        return self.reshape_res(res.text)
+
+    def reshape_res(self, res: str) -> str:
+        # このクラスの責務じゃないので本来別クラスでやるべき
+        res = res.replace('\n', '')
+        res = res.replace(' ', '')
+        return res
