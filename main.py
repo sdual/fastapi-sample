@@ -3,11 +3,11 @@ import traceback
 import uvicorn
 from fastapi import FastAPI
 
-from api_sample.server import APIServer
+from api_sample.server import SampleAPIApp
 
 
 def run_api() -> FastAPI:
-    return APIServer.run()
+    return SampleAPIApp.setup_router()
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 from pytest_httpserver import HTTPServer
 import pytest
 
-from api_sample.server import APIServer
+from api_sample.server import SampleAPIApp
 
 
 # https://pytest-httpserver.readthedocs.io/en/latest/
@@ -18,7 +18,7 @@ def test_user_api(httpserver: HTTPServer):
     httpserver.port = 9000
     httpserver.expect_request('/todos/1').respond_with_json(fixture_json)
 
-    app = APIServer.run()
+    app = SampleAPIApp.setup_router()
     client = TestClient(app)
 
     res = client.get("http://localhost:8000/user")
