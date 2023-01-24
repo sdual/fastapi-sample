@@ -3,7 +3,7 @@ from typing import Dict
 from fastapi import APIRouter
 from fastapi_utils.cbv import cbv
 
-from api_sample.services import SampleRequester
+from api_sample.services import SampleRequester, SampleAPIConfig
 
 # https://fastapi.tiangolo.com/tutorial/bigger-applications/
 # https://fastapi-utils.davidmontague.xyz/user-guide/class-based-views/#the-cbv-decorator
@@ -18,7 +18,7 @@ class SampleRouter:
         self._res_value: str = 'hello'
         self._res_message: Dict[str, str] = {"message": "updated."}
 
-        self._requester = SampleRequester()
+        self._requester = SampleRequester(SampleAPIConfig().url)
 
     @router.get('/hello')
     async def hello(self) -> str:
