@@ -2,9 +2,7 @@
 
 FastAPI と uvicorn をインストール
 ```bash
-$ pip install fastapi
-$ pip install fastapi-utils
-$ pip install "uvicorn[standard]"
+$ pip install fastapi fastapi-utils "uvicorn[standard]" requests pytest-httpserver httpx
 ```
 
 起動の仕方

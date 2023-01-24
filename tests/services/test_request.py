@@ -5,6 +5,6 @@ expected_json = """{"userId":1,"id":1,"title":"delectusautautem","completed":fal
 
 
 def test_request():
-    requester = SampleRequester()
+    requester = SampleRequester('https://jsonplaceholder.typicode.com/')
     res = requester.request(1)
     assert res == expected_json

@@ -10,10 +10,15 @@ import requests
 # https://requests.readthedocs.io/en/latest/
 
 class SampleRequester:
-    _SAMPLE_API_BASE_URL = 'https://jsonplaceholder.typicode.com/todos/'
+
+    def __init__(self, base_url=None):
+        if base_url is None:
+            self._base_url = 'http://localhost:9000'
+        else:
+            self._base_url = base_url
 
     def request(self, user_id: int) -> str:
-        url = urllib.parse.urljoin(self._SAMPLE_API_BASE_URL, str(user_id))
+        url = urllib.parse.urljoin(self._base_url, 'todos/' + str(user_id))
         res = requests.get(url)
         return self.reshape_res(res.text)
 
